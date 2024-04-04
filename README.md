@@ -1,3 +1,9 @@
+# Installed packages and libraries
+react (npm install)
+react-router-dom (npm install react-router-dom)
+axios (npm install axios)
+flask_cors (pip install -U flask-cors)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
