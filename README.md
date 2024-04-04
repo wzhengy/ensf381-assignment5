@@ -2,7 +2,7 @@
 react (npm install) \
 react-router-dom (npm install react-router-dom) \
 axios (npm install axios) \
-flask_cors (pip install -U flask-cors) \
+flask_cors (pip install -U flask-cors) 
 
 # Getting Started with Create React App
 
