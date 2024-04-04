@@ -4,9 +4,10 @@ import ProductList from './ProductList';
 import Cart from './Cart';
 import Footer from './Footer';
 import productsData from '../data/products';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Productpage = () => {
+  const navigate = useNavigate();
   const [cartItems, setCartItems] = useState([]);
 
   // Load cart items from localStorage on component mount
@@ -20,11 +21,15 @@ const Productpage = () => {
     }
   }, []); 
 
-  
   useEffect(() => {
     console.log("Productpage component rerendered");
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]); 
+
+  if (localStorage.getItem('isLoggedIn') !== 'true') {
+    navigate('/login');
+    return null;
+  }
 
   const addToCart = (product) => {
     const existingItemIndex = cartItems.findIndex(item => item.id === product.id);
